@@ -9,7 +9,8 @@ before_action :set_kitten_url, only: [:kitten, :kittens]
   end
 
   def contest
-    @header = "Here is the contest"
+    flash[:notice] = "Sorry the contest is over"
+    redirect_to "/welcome"
   end
 
   def kitten
