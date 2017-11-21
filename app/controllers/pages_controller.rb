@@ -10,7 +10,7 @@ before_action :set_kitten_url, only: [:kitten, :kittens]
 
   def contest
     flash[:notice] = "Sorry the contest is over"
-    redirect_to "/welcome"
+    redirect_to root_path
   end
 
   def kitten
@@ -28,7 +28,7 @@ before_action :set_kitten_url, only: [:kitten, :kittens]
     if params[:magic_word] == 'november'
     else
       flash[:notice] = "You do not have permission to see this page!"
-      redirect_to "/kittens"
+      redirect_to kittens_size_path(300)
     end
   end
 end
